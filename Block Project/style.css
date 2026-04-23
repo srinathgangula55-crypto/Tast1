@@ -1,0 +1,124 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f5f7fa;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: white;
+}
+
+.logo {
+  color: #2563eb;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  padding: 40px;
+  gap: 40px;
+}
+
+main {
+  flex: 2;
+}
+
+aside {
+  flex: 1;
+}
+
+/* BLOCKQUOTE */
+blockquote {
+  border-left: 4px solid #2563eb;
+  padding-left: 10px;
+  font-style: italic;
+}
+
+/* DETAILS */
+details summary {
+  cursor: pointer;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+/* CODE */
+.code-box {
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+/* VIDEO */
+video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+th {
+  background: #f1f5f9;
+}
+
+.meta {
+  text-align: center;
+  color: #d2d5dc;
+}
+
+/* FORM */
+fieldset {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #2563eb, #1e40af);
+  color: white;
+  border: none;
+}
+
+/* SIDEBAR */
+.card {
+  background: linear-gradient(to right, #2563eb, #1e40af);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
