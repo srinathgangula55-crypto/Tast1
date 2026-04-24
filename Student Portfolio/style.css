@@ -1,0 +1,81 @@
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background: #919fb5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container (center page) */
+.main {
+  width: 60%;
+  margin: 30px auto;
+  background: rgb(255, 255, 255);
+  padding: 60px;
+  border-radius: 10px;
+
+}
+span{
+    color: #8317d0;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  color: #2a5bd7;
+}
+
+/* Section spacing */
+section {
+  margin-bottom: 20px;
+}
+
+/* Profile image */
+img {
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+}
+
+/* Skills list */
+ul {
+  padding-left: 20px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+/* Group selector */
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: #2a5bd7;
+  color: white;
+}
+
+/* Link */
+a {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #2a5bd7;
+  font-weight: bold;
+}
+/* Pseudo class selector */
+a:hover {
+  color: black;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: gray;
+}

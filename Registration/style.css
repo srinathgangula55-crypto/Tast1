@@ -1,0 +1,117 @@
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background: #a4a4b2;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header h1 {
+  text-align: center;
+  color: #3916d7;
+  margin-top: 20px;
+}
+
+/* Navbar */
+nav {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+nav a {
+  
+  color: #2a5bd7;
+  margin:  3px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #cf1919;
+}
+
+/* Form Container */
+form {
+  width: 60%;
+  margin: auto;
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 8px;
+  
+}
+
+/* Table */
+table {
+  width: 100%;
+  
+  
+}
+
+/* Table cells */
+td {
+  padding: 10px;
+  border: 1px solid #181616;
+}
+
+/* Labels */
+td:first-child {
+  font-weight: bold;
+  width: 30%;
+}
+
+/* Inputs----- Group Selectors*/
+input, select, textarea {
+  width: 97%;
+  padding: 10px;
+  border: 1px solid #11ab3f;
+  border-radius: 4px;
+}
+
+/* Radio & Checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+/* Buttons */
+input[type="submit"],
+input[type="reset"] {
+  width: auto;
+  padding: 8px 15px;
+  border: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  background: #2a5bd7;
+  color: white;
+}
+
+input[type="reset"] {
+  background: rgb(238, 13, 13);
+  color: white;
+}
+
+/* Hover */
+input[type="submit"]:hover {
+  background: #1d47a1;
+}
+
+input[type="reset"]:hover {
+  background: #555;
+}
+
+/* Note */
+aside {
+  text-align: center;
+  margin-top: 15px;
+  color: #cb2b2b;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: gray;
+}
