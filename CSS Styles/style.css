@@ -1,0 +1,142 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10%;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  color: white;
+  padding: 10px;
+  background: linear-gradient(85deg,#18d622, #0e0ad6)
+}
+
+/* SECTIONS */
+section {
+  padding: 10px;
+}
+
+/* COLOR BOXES */
+.color-box {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  
+}
+
+.hex { background: #ff5733; }
+.rgb { background: rgb(0, 204, 113); }
+.hsl { background: hsl(200, 100%, 50%); }
+.rgba { background: rgba(0, 0, 0, 0.5); }
+
+/* GRADIENT */
+.gradient-box {
+  padding: 40px;
+  color: white;
+  text-align: center;
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+}
+
+/* BORDERS */
+.border {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+}
+
+.dashed { border: 2px dashed blue; }
+.dotted { border: 2px dotted green; }
+.double { border: 4px double black; }
+.rounded { border: 2px solid red; border-radius: 10px; }
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background: blue;
+  border-radius: 50%;
+}
+
+/* SHADOW */
+.card {
+  width: 130px;
+  padding: 20px;
+  margin: 10px;
+  background: white;
+  box-shadow: 0 0 5px gray;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgb(216, 32, 32);
+}
+
+/* BUTTON */
+.btn {
+  padding: 10px;
+  background: blue;
+  color: white;
+  border: none;
+}
+
+.btn:hover {
+  background: rgb(5, 5, 16);
+}
+
+/* TEXT */
+.drop::first-letter {
+  font-size: 30px;
+  color: blue;
+}
+
+.caps {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* LIST */
+.list {
+  list-style-type: square;
+}
+
+/* TABLE */
+/* PARENT STYLE */
+.parent {
+  color: blue;              
+  font-family: Arial;     
+  text-align: center;       
+}
+
+/* TABLE */
+.table1 {
+  border-collapse:collapse;   
+  width: 100%;
+}
+
+/* CHILD ELEMENTS */
+.table1 th, 
+.table1 td {
+  border: 1px solid rgb(10, 7, 7);
+  padding: 10px;
+}
+
+/* HEADER STYLE */
+.table1 th {
+  background-color: black;
+  color: white;   
+}
+
+/* OVERFLOW */
+.overflow-box {
+  height: 90px;
+  width: 300px;
+  border: 1px solid black;
+  overflow: scroll;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 10px;
+  color: gray;
+}
