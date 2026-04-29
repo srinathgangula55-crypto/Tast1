@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #ece8e8d4;
+}
+
+section {
+  margin-top: 10px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  color: #4a4a4a;
+}
+
+
+img {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+    .block-image{
+      display:block
+    }                              
+  
+  
+.flexbox {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap: 15px;
+}
