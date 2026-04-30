@@ -1,0 +1,93 @@
+* {
+   margin: 0; 
+  padding: 0; 
+  box-sizing:border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #f4f5f9;
+}
+
+.section {
+  width: 90%;
+  margin: 60px auto;
+  text-align:center;
+}
+
+.section h2 {
+  color: #e76e4d;
+   font-family: serif;
+  margin-bottom: 40px;
+  
+}
+
+
+.cards {
+  display: flex;
+  gap: 25px;
+  justify-content:center;
+}
+
+.card {
+  width: 280px;
+  background: black;
+  overflow:hidden;
+  transition: 0.4s;
+}
+
+
+.img-box img {
+  width: 300px;
+  height: 200px;
+  transition: 0.4s;
+}
+
+
+.content {
+  padding: 20px;
+  text-align:left;
+}
+
+ h3 span {
+  color: #ff5a2c; 
+  font-weight: 600;
+} 
+h3 {
+    color: white;
+}
+
+.content p {
+  color: #b0b3c0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+.title {
+  font-size: 38px;
+  font-weight: 400;
+
+  background-image: linear-gradient(90deg, #f37021, #ed1024,#f37021);
+  background-size: 400%; 
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color:transparent;
+
+  animation: slideRight 4s linear infinite;
+}
+
+@keyframes slideRight {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
