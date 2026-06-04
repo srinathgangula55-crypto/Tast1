@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="card">
+    <h2 id="name"></h2>
+    <p id="age"></p>
+    <p id="status"></p>
+    <style>.card{
+    width:300px;
+    padding:20px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    text-align:center;
+}</style>
+    <script>
+        let userName = "Srinath";   
+let age = 25;               
+let isActive = true;        
+
+document.getElementById("name").innerHTML = userName;
+document.getElementById("age").innerHTML = "Age : " + age;
+document.getElementById("status").innerHTML =
+isActive ? "Active User" : "Inactive User";
+    </script>
+    <!-- ===================================== -->
+     
+</div>
+<div class="cart">
+    <h2>Shopping Cart</h2>
+    <button onclick="calculateTotal()">
+        Calculate Total
+    </button>
+
+    <h3 id="results"></h3>
+</div>
+<script>
+    function calculateTotal(){
+
+    let productName = "Mobile"; 
+    let price = 25000;          
+    let quantity = 2;           
+
+    let total = price * quantity;
+
+    document.getElementById("results").innerHTML =
+    productName + " Total Price : ₹" + total;
+}
+</script>
+<!-- ===================Color change======================== -->
+ <button onclick="changeColor()">
+    Change Background
+</button>
+<style>
+    body{
+    text-align:center;
+    margin-top:100px;
+    transition: 0.5s;
+}
+button{
+    padding:12px 20px;
+    cursor: pointer;
+}
+</style>
+<script>
+let colors = ["red", "blue", "green", "yellow"];
+let index = 0;
+
+function changeColor() {
+    document.body.style.backgroundColor = colors[index];
+
+    index++;
+
+    if(index === colors.length){
+        index = 0;
+    }
+}
+</script>
+<!-- =======================JS operators Student Result Calculator========================= -->
+   <div class="container">
+        <h2>Student Result Calculator</h2>
+
+        <input type="number" id="sub1" placeholder="Subject 1 Marks">
+        <input type="number" id="sub2" placeholder="Subject 2 Marks">
+        <input type="number" id="sub3" placeholder="Subject 3 Marks">
+         <input type="number" id="sub4" placeholder="Subject 4 Marks">
+          <input type="number" id="sub5" placeholder="Subject 5 Marks">
+
+        <button onclick="calculateResult()">
+            Calculate Result
+        </button>
+
+        <h3 id="total"></h3>
+        <h3 id="average"></h3>
+        <h3 id="result"></h3>
+    </div>
+    <style>
+
+.container{
+    width: 500px;
+    margin: 100px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+input{
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+}
+
+button{
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border: none;
+}
+
+h3{
+    color: blue;
+}
+    </style>
+    <script>
+        function calculateResult(){
+
+    let sub1 = Number(document.getElementById("sub1").value);
+    let sub2 = Number(document.getElementById("sub2").value);
+    let sub3 = Number(document.getElementById("sub3").value);
+     let sub4 = Number(document.getElementById("sub4").value);
+      let sub5 = Number(document.getElementById("sub5").value);
+
+
+    let totalMarks = sub1 + sub2 + sub3 + sub4 + sub5;
+
+    let avgMarks = totalMarks / 5;
+
+
+    let grade = "";
+
+
+    if(avgMarks >= 35){
+        grade = "PASS";
+    }else{
+        grade = "FAIL";
+    }
+
+    document.getElementById("total").innerHTML =
+    "Total Marks : " + totalMarks;
+    // console.log("Total Marks : " + totalMarks);
+
+    document.getElementById("average").innerHTML =
+    "Average Marks : " + avgMarks;
+  // console.log("Average Marks : " + avgMarks);
+    document.getElementById("result").innerHTML =
+    "Result : " + grade;
+}
+    </script>
+    <!-- ==========================JS operators ex-2Salary Calculator==================== -->
+     <div class="container">
+         <h1>Salary Calculator</h1>
+
+    <input type="text" id="empName" placeholder="Enter Employee Name">
+
+    <br><br>
+
+    <input type="number" id="salary" placeholder="Enter Basic Salary">
+
+    <br><br>
+
+    <button onclick="calculateSalary()">
+        Calculate Salary
+    </button>
+
+    <h2 id="output"></h2>
+    </div>
+    <script>
+        function calculateSalary(){
+
+    let empName =
+    document.getElementById("empName").value;
+
+    let basicSalary =
+   Number(document.getElementById("salary").value);
+
+    let hra = basicSalary * 20 / 100;
+
+    let bonus = basicSalary * 10 / 100;
+
+    let totalSalary =
+    basicSalary + hra + bonus;
+
+    let category = "";
+
+    if(totalSalary >= 50000){
+        category = "High Salary";
+    }else{
+        category = "Normal Salary";
+    }
+
+    document.getElementById("output").innerHTML =
+    `Employee : ${empName}<br>
+    Basic Salary : ₹${basicSalary}<br>
+    HRA : ₹${hra}<br>
+    Bonus : ₹${bonus}<br>
+    Total Salary : ₹${totalSalary}<br>
+    Category : ${category}`;
+}
+    </script>
+    <!-- ================================Discount Calculator ======================== -->
+
+    <div class="container">
+
+        <h2>Discount Calculator</h2>
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Enter Bill Amount">
+
+        <br><br>
+
+        <button onclick="calculateDiscount()">
+            Calculate Discount
+        </button>
+
+        <h3 id="discount"></h3>
+        <h3 id="finalAmount"></h3>
+
+    </div>
+    <script>
+        function calculateDiscount(){
+
+    let amount =
+    Number(document.getElementById("amount").value);
+
+    let discount = 0;
+
+    if(amount >= 5000){
+
+        discount = amount * 10 / 100;
+    }
+
+    let finalAmount =
+    amount - discount;
+
+    document.getElementById("discount").innerHTML =
+    "Discount : ₹" + discount;
+
+    document.getElementById("finalAmount").innerHTML =
+    "Final Amount : ₹" + finalAmount;
+}
+    </script>
+
+</body>
+</html>
