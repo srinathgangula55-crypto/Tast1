@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container{
+    width:500px;
+    margin:50px auto;
+    padding:20px;
+    border:1px solid gray;
+    border-radius:10px;
+}
+
+.form-group{
+    display:flex;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+label{
+    width:120px;
+    font-weight:bold;
+}
+
+input{
+    padding:8px;
+    width:200px;
+}
+
+button{
+    padding:10px 20px;
+    margin-top:15px;
+}
+
+#output{
+    margin-top:20px;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Result System</h2>
+
+<div class="form-group">
+<label>Subject 1</label>
+<input type="number" id="sub1">
+</div>
+
+<div class="form-group">
+<label>Subject 2</label>
+<input type="number" id="sub2">
+</div>
+
+<div class="form-group">
+<label>Subject 3</label>
+<input type="number" id="sub3">
+</div>
+
+<div class="form-group">
+<label>Subject 4</label>
+<input type="number" id="sub4">
+</div>
+
+<div class="form-group">
+<label>Subject 5</label>
+<input type="number" id="sub5">
+</div>
+
+<div class="form-group">
+<label>Subject 6</label>
+<input type="number" id="sub6">
+</div>
+
+<button onclick="
+
+let subject1 = Number(document.getElementById('sub1').value);
+let subject2 = Number(document.getElementById('sub2').value);
+let subject3 = Number(document.getElementById('sub3').value);
+let subject4 = Number(document.getElementById('sub4').value);
+let subject5 = Number(document.getElementById('sub5').value);
+let subject6 = Number(document.getElementById('sub6').value);
+
+let total =
+subject1 + subject2 + subject3 +
+subject4 + subject5 + subject6;
+
+let average = total / 6;
+
+let allPass =
+subject1 > 35 &&
+subject2 > 35 &&
+subject3 > 35 &&
+subject4 > 35 &&
+subject5 > 35 &&
+subject6 > 35;
+
+let anyTopper =
+subject1 > 90 ||
+subject2 > 90 ||
+subject3 > 90 ||
+subject4 > 90 ||
+subject5 > 90 ||
+subject6 > 90;
+
+subject1++;
+subject2--;
+
+let result =
+average >= 35 ? 'Pass' : 'Fail';
+
+let grade='';
+
+if(average >= 90){
+ grade='A Grade';
+}
+else if(average >= 75){
+ grade='B Grade';
+}
+else if(average >= 60){
+ grade='C Grade';
+}
+else if(average >= 35){
+ grade='D Grade';
+}
+else{
+ grade='Fail';
+}
+
+document.getElementById('output').innerHTML =
+
+'Subject1 After ++ : ' + subject1 + '<br><br>' +
+
+'Subject2 After -- : ' + subject2 + '<br><br>' +
+
+'Total : ' + total + '<br><br>' +
+
+'Average : ' + average.toFixed(2) + '<br><br>' +
+
+'All Subjects Passed : ' + allPass + '<br><br>' +
+
+'Any Subject Above 90 : ' + anyTopper + '<br><br>' +
+
+'Result : ' + result + '<br><br>' +
+
+'Grade : ' + grade;
+
+">
+
+Check Result
+
+</button>
+
+<div id="output"></div>
+
+</div>
+
+</body>
+</html>
