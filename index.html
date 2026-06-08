@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // ============================Using if else====================================================
+let signal = "Yellow";
+
+if(signal === "Red"){
+    console.log("Stop Immediately");
+}
+else if(signal === "Yellow"){
+    console.log("Slow down and prepare to stop");
+}
+else if(signal === "Green"){
+    console.log("Go Safely");
+}
+else{
+    console.log("Invalid Signal");
+}
+
+// ================================using Swith===============================================
+ let Signal = "Green";
+
+switch(Signal){
+
+case "Red":
+        console.log("Stop Immediately");
+        break;
+
+case "Yellow":
+        console.log("Slow down and prepare to stop");
+        break;
+
+case "green":
+        console.log("Go Safely");
+        break;
+
+default:
+        console.log("Invalid Signal");
+}
+// ======================================For Entry pass=========================================================
+// ------&&--------
+let age = 17;
+let id = 123;
+let pass = "yes";
+if(age >=18 && id === 123 && pass ==="yes"){
+    console.log("allow")
+}
+    else{
+      console.log("not allowed")  
+    }
+// -------OR||-------
+
+let Age = 17;
+let Id = 123;
+let Pass = "yes";
+if(Age >=18 || Id === 123 || Pass ==="yes"){
+    console.log("Allow")
+}
+    else{
+      console.log("Not allowed")  
+    }
+
+// ---------both--------
+
+let AGE = 18;
+let ID = 123;
+let PASS = "yes";
+if(
+    AGE >=18 && (ID === 123 || PASS ==="yes")
+){
+    console.log("ALLOW")
+}
+    else{
+      console.log("NOT ALLOWED")  
+    }
+
+    // ==============================For Holiday==============================================================
+
+    let isWeekend = "yes";
+    let isHoliday = "no"
+    let hasLeaveApproved = "yes";
+
+    // ---------&&----------
+
+    if(isWeekend ==="yes" && isHoliday === "no" && hasLeaveApproved ==="yes"){
+    console.log("Leave Granted");
+}
+else{
+    console.log("Leave Not Granted");
+}
+
+  // ---------||-----------
+
+     if(isWeekend ==="yes" || isHoliday === "no" || hasLeaveApproved ==="yes"){
+    console.log("Leave");
+}
+else{
+    console.log("Working Day");
+}
+
+// ---------both--------
+
+         if((isWeekend ==="yes" || isHoliday === "no") && hasLeaveApproved ==="yes"){
+    console.log("Stay Home");
+}
+else{
+    console.log("Working Day");
+}
+
+// ===============================Switch operator months in every season====================
+console.log("Switch operator months in every season");
+let month = "July";
+
+switch(month){
+
+    case "March":
+    case "April":
+    case "May":
+    case "June":
+        console.log("Summer Season");
+        break;
+
+    case "July":
+    case "August":
+    case "September":
+    case "October":
+        console.log("Rainy Season");
+        break;
+
+    case "November":
+    case "December":
+    case "January":
+    case "February":
+        console.log("Winter Season");
+        break;
+
+    default:
+        console.log("Invalid Month");
+}
+
+// ===============================Switch operator based Month Number====================
+
+let monthNumber = 7;
+
+switch(monthNumber){
+
+    case 1:
+        console.log("January");
+        break;
+
+    case 2:
+        console.log("February");
+        break;
+
+    case 3:
+        console.log("March");
+        break;
+
+    case 4:
+        console.log("April");
+        break;
+
+    case 5:
+        console.log("May");
+        break;
+
+    case 6:
+        console.log("June");
+        break;
+
+    case 7:
+        console.log("July");
+        break;
+
+    case 8:
+        console.log("August");
+        break;
+
+    case 9:
+        console.log("September");
+        break;
+
+    case 10:
+        console.log("October");
+        break;
+
+    case 11:
+        console.log("November");
+        break;
+
+    case 12:
+        console.log("December");
+        break;
+
+    default:
+        console.log("Invalid Month Number");
+}
+
+</script>
+</body>
+</html>
