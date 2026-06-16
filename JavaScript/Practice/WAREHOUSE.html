@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // =====================INPUT DATA==========================
+
+        const products = [
+            {
+                name: "  wireless mouse ",
+                category: "electronics",
+                quantity: 25,
+                price: 799
+            },
+            {
+                name: "Gaming Keyboard",
+                category: "ELECTRONICS",
+                quantity: 8,
+                price: 2499
+            },
+            {
+                name: "office chair",
+                category: "furniture",
+                quantity: 3,
+                price: 5999
+            },
+            {
+                name: "LED Monitor",
+                category: "Electronics",
+                quantity: 15,
+                price: 10999
+            },
+            {
+                name: "water bottle",
+                category: "home",
+                quantity: 50,
+                price: 299
+            }
+        ];
+
+        console.log("========================================");
+        console.log("SMART WAREHOUSE MANAGEMENT SYSTEM");
+        console.log("========================================");
+
+        // =====================================================
+        // ---------------1. CLEAN THE DATA---------------------
+        // =====================================================
+
+        const cleanedProducts = products.map(product => {
+
+            const cleanName = product.name
+                .trim()
+                .split(" ")
+                .map(word =>
+                    word.charAt(0).toUpperCase() +
+                    word.slice(1).toLowerCase()
+                )
+                .join(" ");
+
+            const cleanCategory = product.category.toUpperCase();
+
+            return {
+                ...product,
+                name: cleanName,
+                category: cleanCategory
+            };
+        });
+
+        console.log("\n1. CLEAN THE DATA");
+        console.log(cleanedProducts);
+
+        // =====================================================
+        // ---2.CALCULATE INVENTORY VALUE(PRODUCT ANALYSIS)-----
+        // =====================================================
+
+        const analyzedProducts = cleanedProducts.map(product => {
+
+            const inventoryValue = product.quantity * product.price;
+
+            return {
+                ...product,
+                inventoryValue
+            };
+        });
+
+        console.log("\n2. PRODUCT ANALYSIS");
+        analyzedProducts.forEach(product => {
+
+            console.log(`
+         Product Name     : ${product.name}
+         Category         : ${product.category}
+         Quantity         : ${product.quantity}
+         Price            : ₹${product.price}
+         Inventory Value  : ₹${product.inventoryValue}
+        `);
+        });
+
+        // =====================================================
+        // -------------3. DETERMINE STOCK STATUS-----------------
+        // =====================================================
+
+        console.log("\n3. STOCK STATUS");
+
+        analyzedProducts.forEach(product => {
+
+            let stockStatus = "";
+
+            if (product.quantity > 20) {
+                stockStatus = "HIGH STOCK";
+            }
+            else if (
+                product.quantity >= 10 &&
+                product.quantity <= 20
+            ) {
+                stockStatus = "MEDIUM STOCK";
+            }
+            else if (product.quantity >= 1) {
+                stockStatus = "LOW STOCK";
+            }
+            else {
+                stockStatus = "OUT OF STOCK";
+            }
+
+            console.log(
+                `${product.name} --> ${stockStatus}`
+            );
+        });
+
+
+        // =====================================================
+        // -----------4. WAREHOUSE PRODUCT STATISTICS-----------
+        // =====================================================
+
+        console.log("\n4. PRODUCT STATISTICS");
+
+        const totalProducts = analyzedProducts.length;
+
+        const totalInventoryValue =
+            analyzedProducts.reduce(
+                (sum, product) =>
+                    sum + product.inventoryValue, 0);
+
+        const averagePrice =
+            analyzedProducts.reduce(
+                (sum, product) =>
+                    sum + product.price, 0) / totalProducts;
+
+        const mostExpensive =
+            analyzedProducts.reduce(
+                (max, product) =>
+                    product.price > max.price ? product : max);
+
+        const cheapest =
+            analyzedProducts.reduce(
+                (min, product) =>
+                    product.price < min.price ? product : min);
+                    
+        const highestQuantity =
+            analyzedProducts.reduce(
+                (max, product) =>
+                    product.quantity > max.quantity ? product : max);
+
+        const lowestQuantity =
+            analyzedProducts.reduce(
+                (min, product) =>
+                    product.quantity < min.quantity ? product : min);
+
+        console.log("Total Products            :", totalProducts);
+        console.log("Total Inventory           :", totalInventoryValue);
+        console.log("Average Price             :", averagePrice.toFixed(2));
+        console.log("Most Expensive            :", mostExpensive.name);
+        console.log("Cheapest Product          :", cheapest.name);
+        console.log("Highest Quantity Product  :", highestQuantity.name);
+        console.log("Lowest Quantity Product   :", lowestQuantity.name);
+
+
+        // =====================================================
+        // -----------------5. SEARCH FEATURES------------------
+        // =====================================================
+
+        console.log("\n5. SEARCH FEATURES");
+
+        const keyword = "ele";
+
+        const searchResults = analyzedProducts.filter(product =>
+            product.category
+                .toLowerCase()
+                .includes(keyword.toLowerCase())
+        );
+
+        console.log(`Products matching "${keyword}"`);
+
+        searchResults.forEach(product =>
+            console.log(product.name)
+        );
+
+        // =====================================================
+        // \---------------------6. SORTING---------------------
+        // =====================================================
+
+        console.log("\n6. SORTING");
+
+        // Price High to Low
+
+        const priceSorted =
+            [...analyzedProducts]
+                .sort(
+                    (a, b) =>
+                        b.price - a.price
+                );
+
+        console.log("\nPrice High To Low");
+
+        priceSorted.forEach(product =>
+            console.log(
+                `${product.name} - ₹${product.price}`
+            )
+        );
+
+        // Quantity Low to High
+
+        const quantitySorted =
+            [...analyzedProducts]
+                .sort(
+                    (a, b) =>
+                        a.quantity - b.quantity
+                );
+
+        console.log("\nQuantity Low To High");
+
+        quantitySorted.forEach(product =>
+            console.log(
+                `${product.name} - ${product.quantity}`
+            )
+        );
+
+        // =====================================================
+        // -----------------7. TOP PRODUCTS---------------------
+        // =====================================================
+
+        console.log("\n7. TOP PRODUCTS");
+
+        // Top 3 Costliest Products
+
+        const top3Expensive =
+            [...analyzedProducts]
+                .sort(
+                    (a, b) =>
+                        b.price - a.price
+                )
+                .slice(0, 3);
+
+        console.log("\nTop 3 Costliest Products");
+
+        top3Expensive.forEach(product =>
+            console.log(
+                `${product.name} - ₹${product.price}`
+            )
+        );
+
+
+        // =====================================================
+        // ------------------8. LOW STOCK ALERT-----------------
+        // =====================================================
+
+        console.log("\n8. LOW STOCK ALERTS");
+
+        analyzedProducts.forEach(product => {
+
+            if (product.quantity < 5) {
+
+                console.log(
+                    `WARNING: ${product.name} stock is critically low.`
+                );
+
+            }
+
+        });
+
+
+        // =====================================================
+        // 9. CATEGORY SUMMARY
+        // =====================================================
+
+        console.log("\n9. CATEGORY SUMMARY");
+
+        const categorySummary = {};
+
+        analyzedProducts.forEach(product => {
+
+            categorySummary[
+                product.category
+            ] = (categorySummary[product.category] || 0) + 1;
+        });
+
+        for (let category in categorySummary) {
+
+            console.log(
+                `${category} : ${categorySummary[category]}`
+            );
+
+        }
+
+
+
+        // =====================================================
+        // -----------------10. VISUALIZATION-------------------
+        // =====================================================
+
+        console.log("\n10. STOCK VISUALIZATION");
+
+        analyzedProducts.forEach(product => {
+
+            console.log(
+                product.name.padEnd(20) +
+                " " +
+                "#".repeat(product.quantity)
+            );
+
+        });
+
+        console.log("\n========================================");
+        console.log("REPORT GENERATED SUCCESSFULLY");
+        console.log("========================================");
+    </script>
+</body>
+
+</html>
