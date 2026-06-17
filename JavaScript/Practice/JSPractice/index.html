@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeless Watches</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">TIMELESS WATCHES</div>
+
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Brands</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Product Section -->
+    <section class="product-container">
+
+        <!-- Left Side -->
+        <div class="product-gallery">
+
+            <img id="mainImage"
+                src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800"
+                alt="Watch"
+                class="main-image">
+
+            <div class="thumbnails">
+                <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=300"
+                    onclick="changeImage(this.src)">
+
+                <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=300"
+                    onclick="changeImage(this.src)">
+
+                <img src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=300"
+                    onclick="changeImage(this.src)">
+
+                <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=300"
+                    onclick="changeImage(this.src)">
+            </div>
+
+        </div>
+
+        <!-- Right Side -->
+        <div class="product-details">
+
+            <h1>Elegant Luxury Watch</h1>
+
+            <h3>PRESTIGE TIME CO.</h3>
+
+            <div class="price-section">
+                <span class="current-price">$499.99</span>
+                <span class="old-price">$799.99</span>
+                <span class="discount">38% OFF</span>
+            </div>
+
+            <p class="description">
+                This luxurious timepiece combines elegance with precision
+                craftsmanship. Perfect for formal occasions or everyday wear,
+                it features premium materials and impeccable design.
+            </p>
+
+            <div class="rating">
+                ⭐⭐⭐⭐⭐
+                <span>Rated 4.8/5 (256 reviews)</span>
+            </div>
+
+            <!-- Quantity -->
+            <div class="quantity-box">
+                <button onclick="decreaseQty()">-</button>
+                <input type="text" id="qty" value="1" readonly>
+                <button onclick="increaseQty()">+</button>
+            </div>
+
+            <!-- Add to Cart -->
+            <button class="cart-btn">
+                Add to Bag
+            </button>
+
+            <!-- Offer Box -->
+            <div class="offer-box">
+                <h2>Limited-Time Offer!</h2>
+
+                <p>
+                    Get an additional 10% off your first purchase
+                    when you sign up for our newsletter.
+                </p>
+
+                <button>Sign Up Now</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
