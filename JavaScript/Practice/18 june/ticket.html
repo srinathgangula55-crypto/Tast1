@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Movie Ticket Pricing</title>
+    <link rel="stylesheet" href="ticket.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Movie Ticket Calculator</h2>
+
+        <input
+            type="number"
+            id="age"
+            placeholder="Enter Age">
+
+        <select id="showtime">
+
+            <option value="matinee">
+                Matinee
+            </option>
+
+            <option value="evening">
+                Evening
+            </option>
+
+        </select>
+
+        <button onclick="calculateTicket()">
+            Calculate Ticket
+        </button>
+
+        <h3 id="result"></h3>
+
+    </div>
+
+    <script src="ticket.js"></script>
+
+</body>
+
+</html>
