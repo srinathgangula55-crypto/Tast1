@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Pizza Order Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Left Section -->
+    <div class="builder">
+
+        <h1>🍕 BUILD YOUR SMART PIZZA</h1>
+
+        <label>CRUST</label>
+        <select id="crust">
+            <option value="thin">🍕 Thin ($8.00)</option>
+            <option value="regular">🍕 Regular ($10.00)</option>
+            <option value="stuffed">🍕 Stuffed ($12.00)</option>
+        </select>
+
+        <label>SIZE</label>
+        <div class="sizes">
+            <button class="size-btn active" data-size="small">Small</button>
+            <button class="size-btn" data-size="medium">Medium</button>
+            <button class="size-btn" data-size="large">Large</button>
+        </div>
+
+        <label>TOPPINGS</label>
+
+        <div class="toppings">
+            <label><input type="checkbox" value="cheese"> Cheese</label>
+            <label><input type="checkbox" value="pepperoni"> Pepperoni</label>
+            <label><input type="checkbox" value="mushrooms"> Mushrooms</label>
+            <label><input type="checkbox" value="onions"> Onions</label>
+            <label><input type="checkbox" value="peppers"> Peppers</label>
+            <label><input type="checkbox" value="sausage"> Sausage</label>
+        </div>
+
+    </div>
+
+    <!-- Receipt -->
+    <div class="receipt">
+
+        <h2>🧾 YOUR RECEIPT</h2>
+
+        <div class="receipt-card">
+
+            <h3 id="pizzaTitle">SMALL THIN CRUST PIZZA</h3>
+
+            <hr>
+
+            <p>
+                Base :
+                <span id="basePrice">$0.00</span>
+            </p>
+
+            <p>
+                Toppings :
+                <span id="toppingsPrice">$0.00</span>
+            </p>
+
+            <hr>
+
+            <h2>
+                FINAL TOTAL
+                <span id="totalPrice">$0.00</span>
+            </h2>
+
+        </div>
+
+        <button class="order-btn">
+            PLACE ORDER
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
