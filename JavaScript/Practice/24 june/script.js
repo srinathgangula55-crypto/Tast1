@@ -1,147 +1,200 @@
+//----------------- Pizza Prices--------------------
+
 const MENU = {
-    Size: {
-        thin: 8.00,
-        regular: 10.00,
-        stuffed: 12.00
+
+    crust: {
+
+        thin: 60,
+
+        regular: 80,
+
+        stuffed: 100
     },
 
-    Lenght: {
-        small: 1.0,
+    size: {
+
+        small: 1,
+
         medium: 1.5,
-        large: 2.0
-    },
 
-    toppings: {
-        cheese: 1.0,
-        pepperoni: 1.0,
-        mushrooms: 1.0,
-        onions: 1.0,
-        peppers: 1.0,
-        sausage: 1.0
+        large: 2
     }
+
 };
 
-// Pure Functions
-
-const calculatePrice = (Size, Lenght) => {
-    const Sizeprize =
-        MENU.Size[Size] || MENU.Size.regular;
-
-    const Lenghtprize =
-        MENU.Lenght[Lenght] || MENU.Lenght.medium;
-
-    return Sizeprize * Lenghtprize;
-};
-
-const calculateToppingsPrice = (toppings) => {
-    return toppings.reduce((total, topping) => {
-        return total + MENU.toppings[topping];
-    }, 0);
-};
-
-// Higher Order Function
-
-const calculateTotalPrice = (
-    calculatePrice,
-    calculateToppingsPrice
-) => {
-
-    return (Size, Lenght, toppings) => {
-
-        const basePrice =
-            calculatePrice(Size, Lenght);
-
-        const toppingsPrice =
-            calculateToppingsPrice(toppings);
-
-        return basePrice + toppingsPrice;
-    };
-};
-
-const getTotalPrice = calculateTotalPrice(
-    calculatePrice,
-    calculateToppingsPrice
-);
+//---------------------------- Default Size-------------------
 
 let selectedSize = "small";
 
-const sizeButtons =
-    document.querySelectorAll(".size-btn");
+// -------Select Buttons---------
 
-sizeButtons.forEach(btn => {
+let smallBtn =
+document.getElementById("smallBtn");
 
-    btn.addEventListener("click", () => {
+let mediumBtn =
+document.getElementById("mediumBtn");
 
-        sizeButtons.forEach(button =>
-            button.classList.remove("active")
-        );
+let largeBtn =
+document.getElementById("largeBtn");
 
-        btn.classList.add("active");
+// ---------Default Active Button-------
 
-        selectedSize = btn.dataset.size;
+smallBtn.classList.add("active");
 
-        updateReceipt();
-    });
+// -----------------------Small Button-----------------------------
+
+smallBtn.addEventListener("click", function(){
+
+    selectedSize = "small";
+
+    removeActive();
+
+    smallBtn.classList.add("active");
+
+    updateReceipt();
+
 });
 
-document
-    .getElementById("crust")
-    .addEventListener("change", updateReceipt);
+// ----------------------Medium Button----------------------
+
+mediumBtn.addEventListener("click", function(){
+
+    selectedSize = "medium";
+
+    removeActive();
+
+    mediumBtn.classList.add("active");
+
+    updateReceipt();
+
+});
+
+// ------------------------Large Button-----------------------
+
+largeBtn.addEventListener("click", function(){
+
+    selectedSize = "large";
+
+    removeActive();
+
+    largeBtn.classList.add("active");
+
+    updateReceipt();
+
+});
+
+// ---------------------Remove Active Class---------------------
+
+function removeActive(){
+
+    smallBtn.classList.remove("active");
+
+    mediumBtn.classList.remove("active");
+
+    largeBtn.classList.remove("active");
+
+}
+
+// -----------------------Crust Change-----------------------------
 
 document
-    .querySelectorAll(
-        'input[type="checkbox"]'
-    )
-    .forEach(box => {
-        box.addEventListener(
-            "change",
-            updateReceipt
-        );
+.getElementById("crust")
+.addEventListener("change", updateReceipt);
+
+// -----------------------Checkbox Change---------------------------
+
+let checkboxes =
+document.querySelectorAll(
+'input[type="checkbox"]'
+);
+
+checkboxes.forEach(function(box){
+
+    box.addEventListener(
+        "change",
+        updateReceipt
+    );
+
+});
+
+// ------------------------Main Function--------------------------
+
+function updateReceipt(){
+
+    let crust =
+
+    document
+    .getElementById("crust")
+    .value;
+
+    // --------Base Price------
+
+    let basePrice =
+
+    MENU.crust[crust] *
+
+    MENU.size[selectedSize];
+
+    // -----------------------------Toppings Price--------------------------
+
+    let toppingPrice = 0;
+
+    checkboxes.forEach(function(box){
+
+        if(box.checked){
+
+            toppingPrice =
+
+            toppingPrice + 1;
+
+        }
+
     });
 
-function updateReceipt() {
+    // ------------------------------Total---------------------
 
-    const crust =
-        document.getElementById("crust").value;
+    let total =
 
-    const toppings = [
-        ...document.querySelectorAll(
-            'input[type="checkbox"]:checked'
-        )
-    ].map(item => item.value);
+    basePrice +
 
-    const basePrice =
-        calculatePrice(crust, selectedSize);
+    toppingPrice;
 
-    const toppingsPrice =
-        calculateToppingsPrice(toppings);
+    // -----------------------------Show Prices-----------------
 
-    const totalPrice =
-        getTotalPrice(
-            crust,
-            selectedSize,
-            toppings
-        );
+    document
+    .getElementById("basePrice")
+    .innerText =
+    "$" +
+    basePrice.toFixed(2);
 
-    document.getElementById(
-        "basePrice"
-    ).textContent =
-        `$${basePrice.toFixed(2)}`;
+    document
+    .getElementById("toppingPrice")
+    .innerText =
+    "$" +
+    toppingPrice.toFixed(2);
 
-    document.getElementById(
-        "toppingsPrice"
-    ).textContent =
-        `$${toppingsPrice.toFixed(2)}`;
+    document
+    .getElementById("totalPrice")
+    .innerText =
+    "$" +
+    total.toFixed(2);
 
-    document.getElementById(
-        "totalPrice"
-    ).textContent =
-        `$${totalPrice.toFixed(2)}`;
+    // -----------------------------Pizza Name--------------------
 
-    document.getElementById(
-        "pizzaTitle"
-    ).textContent =
-        `${selectedSize.toUpperCase()} ${crust.toUpperCase()} CRUST PIZZA`;
+    document
+    .getElementById("pizzaTitle")
+    .innerText =
+
+    selectedSize.toUpperCase()
+
+    + " "
+
+    + crust.toUpperCase()
+
+    + " CRUST PIZZA";
+
 }
+
+// -----------------------------Load Default Price-------------------
 
 updateReceipt();

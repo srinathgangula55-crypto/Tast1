@@ -1,86 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Pizza Order Calculator</title>
+
+    <title>Pizza Order</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- Left Section -->
-    <div class="builder">
+        <h1>🍕 Pizza Order System</h1>
 
-        <h1>🍕 BUILD YOUR SMART PIZZA</h1>
+        <div class="box">
 
-        <label>CRUST</label>
-        <select id="crust">
-            <option value="thin">🍕 Thin ($8.00)</option>
-            <option value="regular">🍕 Regular ($10.00)</option>
-            <option value="stuffed">🍕 Stuffed ($12.00)</option>
-        </select>
+            <h2>Select Pizza Size</h2>
 
-        <label>SIZE</label>
-        <div class="sizes">
-            <button class="size-btn active" data-size="small">Small</button>
-            <button class="size-btn" data-size="medium">Medium</button>
-            <button class="size-btn" data-size="large">Large</button>
+            <button id="smallBtn">Small</button>
+
+            <button id="mediumBtn">Medium</button>
+
+            <button id="largeBtn">Large</button>
+
         </div>
 
-        <label>TOPPINGS</label>
+        <div class="box">
 
-        <div class="toppings">
-            <label><input type="checkbox" value="cheese"> Cheese</label>
-            <label><input type="checkbox" value="pepperoni"> Pepperoni</label>
-            <label><input type="checkbox" value="mushrooms"> Mushrooms</label>
-            <label><input type="checkbox" value="onions"> Onions</label>
-            <label><input type="checkbox" value="peppers"> Peppers</label>
-            <label><input type="checkbox" value="sausage"> Sausage</label>
+            <h2>Select Crust</h2>
+
+            <select id="crust">
+
+                <option value="thin">
+                    Thin
+                </option>
+
+                <option value="regular" selected>
+                    Regular
+                </option>
+
+                <option value="stuffed">
+                    Stuffed
+                </option>
+
+            </select>
+
         </div>
 
-    </div>
+        <div class="box">
 
-    <!-- Receipt -->
-    <div class="receipt">
+            <h2>Select Toppings</h2>
 
-        <h2>🧾 YOUR RECEIPT</h2>
+            <label>
+                <input
+                    type="checkbox"
+                    value="cheese">
+                Cheese
+            </label>
 
-        <div class="receipt-card">
+            <label>
+                <input
+                    type="checkbox"
+                    value="pepperoni">
+                Pepperoni
+            </label>
 
-            <h3 id="pizzaTitle">SMALL THIN CRUST PIZZA</h3>
+            <label>
+                <input
+                    type="checkbox"
+                    value="mushrooms">
+                Mushrooms
+            </label>
+
+            <label>
+                <input
+                    type="checkbox"
+                    value="onions">
+                Onions
+            </label>
+
+            <label>
+                <input
+                    type="checkbox"
+                    value="peppers">
+                Peppers
+            </label>
+
+            <label>
+                <input
+                    type="checkbox"
+                    value="sausage">
+                Sausage
+            </label>
+
+        </div>
+
+        <div class="receipt">
+
+            <h2 id="pizzaTitle">
+                SMALL REGULAR PIZZA
+            </h2>
 
             <hr>
 
             <p>
-                Base :
-                <span id="basePrice">$0.00</span>
+                Base Price :
+                <span id="basePrice">
+                    $0.00
+                </span>
             </p>
 
             <p>
                 Toppings :
-                <span id="toppingsPrice">$0.00</span>
+                <span id="toppingPrice">
+                    $0.00
+                </span>
             </p>
 
             <hr>
 
             <h2>
-                FINAL TOTAL
-                <span id="totalPrice">$0.00</span>
+                Total :
+                <span id="totalPrice">
+                    $0.00
+                </span>
             </h2>
 
         </div>
 
-        <button class="order-btn">
-            PLACE ORDER
-        </button>
-
     </div>
 
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
