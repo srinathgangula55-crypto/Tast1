@@ -1,0 +1,960 @@
+/* =======================================
+        Google Font
+======================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =======================================
+        Reset
+======================================= */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+/* =======================================
+        Body
+======================================= */
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+    background:linear-gradient(135deg,#3a7bd5,#00d2ff);
+
+}
+
+
+/* =======================================
+        Main Container
+======================================= */
+
+.container{
+
+    width:100%;
+
+    max-width:1300px;
+
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+
+}
+
+
+/* =======================================
+        Header
+======================================= */
+
+header{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+
+header h1{
+
+    color:white;
+
+    font-size:40px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+
+header h1 i{
+
+    color:#FFD43B;
+
+    margin-right:12px;
+
+}
+
+
+/* =======================================
+        Search Section
+======================================= */
+
+.search-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+}
+
+
+/* =======================================
+        Search Input
+======================================= */
+
+.search-box input{
+
+    width:450px;
+
+    padding:16px 20px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+    background:white;
+
+    color:#333;
+
+    transition:.3s;
+
+}
+
+
+.search-box input:focus{
+
+    transform:scale(1.02);
+
+    box-shadow:0 0 15px rgba(255,255,255,.5);
+
+}
+
+
+/* =======================================
+        Search Button
+======================================= */
+
+.search-box button{
+
+    width:60px;
+
+    height:60px;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    border-radius:12px;
+
+    background:#FFD43B;
+
+    color:#333;
+
+    font-size:22px;
+
+    transition:.3s;
+
+}
+
+
+.search-box button:hover{
+
+    transform:translateY(-4px);
+
+    background:white;
+
+}
+
+
+/* =======================================
+        Error Message
+======================================= */
+
+#errorMessage{
+
+    text-align:center;
+
+    color:#ffdddd;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+
+/* =======================================
+        Dashboard
+======================================= */
+
+.dashboard{
+
+    display:grid;
+
+    grid-template-columns:350px 1fr;
+
+    gap:30px;
+
+}
+/* =======================================
+        Left Panel
+======================================= */
+
+.left-panel{
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+
+.left-panel:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+/* =======================================
+        Weather Icon
+======================================= */
+
+.left-panel img{
+
+    width:150px;
+
+    height:150px;
+
+    margin-bottom:20px;
+
+}
+
+
+/* =======================================
+        Temperature
+======================================= */
+
+#temperature{
+
+    font-size:75px;
+
+    color:white;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+
+/* =======================================
+        Weather Condition
+======================================= */
+
+#condition{
+
+    color:#FFE082;
+
+    font-size:28px;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+
+/* =======================================
+        City Name
+======================================= */
+
+#cityName{
+
+    color:white;
+
+    font-size:32px;
+
+    font-weight:600;
+
+    margin-bottom:5px;
+
+}
+
+
+/* =======================================
+        Country
+======================================= */
+
+#country{
+
+    color:#f1f1f1;
+
+    font-size:20px;
+
+    margin-bottom:20px;
+
+}
+
+
+/* =======================================
+        Date & Time
+======================================= */
+
+#currentDate{
+
+    color:white;
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+
+#currentTime{
+
+    color:#FFD43B;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+
+/* =======================================
+        Right Panel
+======================================= */
+
+.right-panel{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+
+/* =======================================
+        Weather Cards
+======================================= */
+
+.card{
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+
+/* =======================================
+        Card Hover
+======================================= */
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.25);
+
+}
+
+
+/* =======================================
+        Card Icons
+======================================= */
+
+.card i{
+
+    font-size:38px;
+
+    color:#FFD43B;
+
+    margin-bottom:15px;
+
+}
+
+
+/* =======================================
+        Card Heading
+======================================= */
+
+.card h3{
+
+    color:white;
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+}
+
+
+/* =======================================
+        Card Value
+======================================= */
+
+.card p{
+
+    color:white;
+
+    font-size:24px;
+
+    font-weight:600;
+
+}
+
+
+/* =======================================
+        Card Animation
+======================================= */
+
+.card{
+
+    animation:fadeIn .6s ease;
+
+}
+
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* =======================================
+        Forecast Section
+======================================= */
+
+.forecast{
+
+    margin-top:40px;
+
+}
+
+
+.forecast h2{
+
+    color:white;
+
+    font-size:30px;
+
+    margin-bottom:20px;
+
+}
+
+
+/* =======================================
+        Forecast Container
+======================================= */
+
+.forecast-container{
+
+    display:flex;
+
+    gap:20px;
+
+    overflow-x:auto;
+
+    padding-bottom:10px;
+
+}
+
+
+/* Scrollbar */
+
+.forecast-container::-webkit-scrollbar{
+
+    height:8px;
+
+}
+
+.forecast-container::-webkit-scrollbar-thumb{
+
+    background:white;
+
+    border-radius:20px;
+
+}
+
+.forecast-container::-webkit-scrollbar-track{
+
+    background:rgba(255,255,255,.15);
+
+}
+
+
+/* =======================================
+        Forecast Card
+======================================= */
+
+.forecast-card{
+
+    min-width:160px;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+
+.forecast-card:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.25);
+
+}
+
+
+.forecast-card h3{
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+
+.forecast-card img{
+
+    width:70px;
+
+    height:70px;
+
+}
+
+
+.forecast-card p{
+
+    color:white;
+
+    margin-top:8px;
+
+    font-size:18px;
+
+}
+
+
+/* =======================================
+        Loading Animation
+======================================= */
+
+.loading{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:30px;
+
+}
+
+
+.spinner{
+
+    width:60px;
+
+    height:60px;
+
+    border:6px solid rgba(255,255,255,.3);
+
+    border-top:6px solid white;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+
+@keyframes spin{
+
+    100%{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/* =======================================
+        Fade Animation
+======================================= */
+
+.dashboard{
+
+    animation:showWeather .7s ease;
+
+}
+
+
+@keyframes showWeather{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =======================================
+        Button Animation
+======================================= */
+
+button{
+
+    transition:.3s;
+
+}
+
+
+button:active{
+
+    transform:scale(.95);
+
+}
+
+
+/* =======================================
+        Input Placeholder
+======================================= */
+
+input::placeholder{
+
+    color:#888;
+
+}
+
+
+/* =======================================
+        Responsive
+======================================= */
+
+@media(max-width:1200px){
+
+.dashboard{
+
+grid-template-columns:1fr;
+
+}
+
+.right-panel{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.container{
+
+padding:20px;
+
+}
+
+header h1{
+
+font-size:30px;
+
+}
+
+.search-box{
+
+flex-direction:column;
+
+}
+
+.search-box input{
+
+width:100%;
+
+}
+
+.search-box button{
+
+width:100%;
+
+height:55px;
+
+}
+
+.left-panel{
+
+padding:20px;
+
+}
+
+#temperature{
+
+font-size:60px;
+
+}
+
+#cityName{
+
+font-size:28px;
+
+}
+
+.right-panel{
+
+grid-template-columns:1fr;
+
+}
+
+.forecast-card{
+
+min-width:140px;
+
+}
+
+}
+
+
+@media(max-width:480px){
+
+body{
+
+padding:10px;
+
+}
+
+.container{
+
+padding:15px;
+
+}
+
+header h1{
+
+font-size:25px;
+
+}
+
+.left-panel img{
+
+width:120px;
+
+height:120px;
+
+}
+
+#temperature{
+
+font-size:50px;
+
+}
+
+.card{
+
+padding:18px;
+
+}
+
+.forecast h2{
+
+font-size:24px;
+
+}
+
+}
+
+
+/* =======================================
+        Dynamic Background Classes
+======================================= */
+
+.sunny{
+
+background:linear-gradient(135deg,#f7971e,#ffd200);
+
+}
+
+.cloudy{
+
+background:linear-gradient(135deg,#7b96df,#5580cf);
+
+}
+
+.rainy{
+
+background:linear-gradient(135deg,#1e3c72,#2a5298);
+
+}
+
+.snow{
+
+background:linear-gradient(135deg,#83a4d4,#b6fbff);
+
+}
+
+.night{
+
+background:linear-gradient(135deg,#141e30,#243b55);
+
+}
+/* =====================================
+        Temperature Chart
+===================================== */
+
+#tempChart{
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    margin-top:20px;
+
+}
+
+
+/* =====================================
+        Hourly Forecast
+===================================== */
+
+.hour-card{
+
+    min-width:130px;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:15px;
+
+    padding:15px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+
+.hour-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+
+.hour-card img{
+
+    width:60px;
+
+    height:60px;
+
+}
+
+
+.hour-card h4{
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+
+.hour-card p{
+
+    color:white;
+
+}

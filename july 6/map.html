@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Google Maps Search</title>
+
+    <link rel="stylesheet" href="map.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🗺 Google Maps Search</h1>
+
+        <div class="search-box">
+
+            <input type="text" id="locationInput" placeholder="Enter Location">
+
+            <button id="searchBtn">
+
+                Search
+
+            </button>
+
+        </div>
+
+        <div id="map"></div>
+
+    </div>
+
+    <script src="map.js"></script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzYinYuS2e5CwXNcGJ-VtI8TMnr_4CEMs&libraries=places&callback=initMap">
+        </script>
+
+</body>
+
+</html>

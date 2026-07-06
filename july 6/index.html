@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+
+    <link rel="stylesheet"
+        href="style.css">
+
+    <!-- Font Awesome Icons -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ===========================
+             Weather Header
+        ============================ -->
+
+        <h1>
+
+            <i class="fa-solid fa-cloud-sun"></i>
+
+            Weather App
+
+        </h1>
+
+        <!-- ===========================
+             Search Section
+        ============================ -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Enter City Name">
+
+            <button id="searchBtn">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                Search
+
+            </button>
+
+        </div>
+
+        <!-- ===========================
+             Weather Card
+        ============================ -->
+
+        <div
+            class="weather-card"
+            id="weatherCard">
+
+            <!-- Weather Icon -->
+
+            <img
+                id="weatherIcon"
+                src=""
+                alt="Weather Icon">
+
+            <!-- City Name -->
+
+            <h2 id="cityName">
+
+                City Name
+
+            </h2>
+
+            <!-- Country -->
+
+            <h3 id="country">
+
+                Country
+
+            </h3>
+
+            <!-- Temperature -->
+
+            <h1 id="temperature">
+
+                0°C
+
+            </h1>
+
+            <!-- Weather Condition -->
+
+            <h3 id="condition">
+
+                Weather Condition
+
+            </h3>
+
+            <!-- Weather Details -->
+
+            <div class="details">
+
+                <div class="detail-box">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                    <p>
+
+                        Humidity
+
+                    </p>
+
+                    <span id="humidity">
+
+                        0%
+
+                    </span>
+
+                </div>
+
+                <div class="detail-box">
+
+                    <i class="fa-solid fa-wind"></i>
+
+                    <p>
+
+                        Wind Speed
+
+                    </p>
+
+                    <span id="wind">
+
+                        0 km/h
+
+                    </span>
+
+                </div>
+
+                <div class="detail-box">
+
+                    <i class="fa-solid fa-gauge-high"></i>
+
+                    <p>
+
+                        Pressure
+
+                    </p>
+
+                    <span id="pressure">
+
+                        0 hPa
+
+                    </span>
+
+                </div>
+
+                <div class="detail-box">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                    <p>
+
+                        Visibility
+
+                    </p>
+
+                    <span id="visibility">
+
+                        0 km
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- Sunrise & Sunset -->
+
+            <div class="sun">
+
+                <div>
+
+                    🌅
+
+                    <h4>
+
+                        Sunrise
+
+                    </h4>
+
+                    <p id="sunrise">
+
+                        --
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    🌇
+
+                    <h4>
+
+                        Sunset
+
+                    </h4>
+
+                    <p id="sunset">
+
+                        --
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Error Message -->
+
+        <p id="errorMessage">
+
+        </p>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

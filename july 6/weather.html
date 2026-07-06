@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Professional Weather Dashboard</title>
+
+    <link rel="stylesheet" href="weather.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <header>
+
+            <h1>
+
+                <i class="fa-solid fa-cloud-sun"></i>
+
+                Weather Dashboard
+
+            </h1>
+
+        </header>
+
+        <!-- Search Section -->
+
+        <div class="search-box">
+
+            <input type="text" id="cityInput" placeholder="Enter City Name">
+
+            <button id="searchBtn">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </button>
+
+        </div>
+
+        <p id="errorMessage"></p>
+
+        <!-- Weather Dashboard -->
+
+        <div class="dashboard" id="weatherCard">
+
+            <!-- Left Section -->
+
+            <div class="left-panel">
+
+                <img id="weatherIcon" src="" alt="Weather Icon">
+
+                <h1 id="temperature">
+
+                    0°C
+
+                </h1>
+
+                <h2 id="condition">
+
+                    Weather
+
+                </h2>
+
+                <h3 id="cityName">
+
+                    City
+
+                </h3>
+
+                <p id="country">
+
+                    Country
+
+                </p>
+
+                <p id="currentDate">
+
+                    Monday, 07 July 2026
+
+                </p>
+
+                <p id="currentTime">
+
+                    10:30 AM
+
+                </p>
+
+            </div>
+
+            <!-- Right Section -->
+
+            <div class="right-panel">
+
+                <div class="card">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                    <h3>Humidity</h3>
+
+                    <p id="humidity">
+
+                        0%
+
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <i class="fa-solid fa-wind"></i>
+
+                    <h3>Wind</h3>
+
+                    <p id="wind">
+
+                        0 km/h
+
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <i class="fa-solid fa-temperature-half"></i>
+
+                    <h3>Feels Like</h3>
+
+                    <p id="feelsLike">
+
+                        0°C
+
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <i class="fa-solid fa-gauge-high"></i>
+
+                    <h3>Pressure</h3>
+
+                    <p id="pressure">
+
+                        0 hPa
+
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                    <h3>Visibility</h3>
+
+                    <p id="visibility">
+
+                        0 km
+
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <i class="fa-solid fa-cloud"></i>
+
+                    <h3>Cloudiness</h3>
+
+                    <p id="clouds">
+
+                        0%
+
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <i class="fa-solid fa-sun"></i>
+
+                    <h3>Sunrise</h3>
+
+                    <p id="sunrise">
+
+                        --
+
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                    <h3>Sunset</h3>
+
+                    <p id="sunset">
+
+                        --
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Hourly Forecast -->
+
+        <section class="forecast">
+
+            <h2>
+
+                Hourly Forecast
+
+            </h2>
+
+            <div class="forecast-container" id="hourlyForecast">
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+        Temperature Chart
+          ========================== -->
+
+        <section class="forecast">
+
+            <h2>
+
+                Hourly Temperature
+
+            </h2>
+
+            <canvas id="tempChart">
+
+            </canvas>
+
+        </section>
+
+
+
+        <!-- ==========================
+        Hourly Forecast
+        ========================== -->
+
+        <section class="forecast">
+
+            <h2>
+
+                Today's Hourly Forecast
+
+            </h2>
+
+            <div class="forecast-container" id="hourlyForecast">
+
+            </div>
+
+        </section>
+
+        <!-- Weekly Forecast -->
+
+        <section class="forecast">
+
+            <h2>
+
+                5-Day Forecast
+
+            </h2>
+
+            <div class="forecast-container" id="weeklyForecast">
+
+            </div>
+
+        </section>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="weather.js"></script>
+
+</body>
+
+</html>
