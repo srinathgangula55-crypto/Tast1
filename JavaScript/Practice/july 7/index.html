@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Geo Location Finder</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Geoapify Search CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/@geoapify/geocoder-autocomplete/styles/minimal.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <header>
+
+            <div class="logo">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <h2>Geo Location Finder</h2>
+
+            </div>
+
+            <div class="clock">
+
+                <i class="fa-regular fa-clock"></i>
+
+                <span id="time"></span>
+
+            </div>
+
+        </header>
+
+        <!-- Search -->
+
+        <div class="search-section">
+
+            <input type="text" id="searchInput" placeholder="Search city, place, landmark...">
+
+            <button id="searchBtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search
+            </button>
+
+        </div>
+
+        <!-- Map -->
+
+        <div id="map"></div>
+
+        <!-- Controls -->
+
+        <div class="controls">
+
+            <button id="myLocation">
+
+                <i class="fa-solid fa-location-crosshairs"></i>
+
+                My Location
+
+            </button>
+
+            <button id="copyBtn">
+
+                <i class="fa-solid fa-copy"></i>
+
+                Copy Coordinates
+
+            </button>
+
+            <button id="clearBtn">
+
+                <i class="fa-solid fa-trash"></i>
+
+                Clear Marker
+
+            </button>
+
+            <button id="themeBtn">
+
+                <i class="fa-solid fa-moon"></i>
+
+                Dark Mode
+
+            </button>
+
+        </div>
+
+        <!-- Information -->
+
+        <div class="info-grid">
+
+            <div class="card">
+
+                <h3>
+
+                    <i class="fa-solid fa-earth-asia"></i>
+
+                    Coordinates
+
+                </h3>
+
+                <p>
+
+                    <strong>Latitude :</strong>
+
+                    <span id="lat">-</span>
+
+                </p>
+
+                <p>
+
+                    <strong>Longitude :</strong>
+
+                    <span id="lng">-</span>
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Selected Address
+
+                </h3>
+
+                <textarea id="address" readonly></textarea>
+
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+
+        <!-- <footer>
+
+            <p>
+
+                Developed using
+
+                <strong>Geoapify API</strong>
+
+                •
+
+                Leaflet
+
+                •
+
+                HTML
+
+                •
+
+                CSS
+
+                •
+
+                JavaScript
+
+            </p>
+
+        </footer> -->
+
+    </div>
+
+    <!-- Loader -->
+
+    <div class="loader" id="loader">
+
+        <div class="spinner"></div>
+
+    </div>
+
+    <!-- Leaflet -->
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Geoapify -->
+
+    <script src="https://unpkg.com/@geoapify/geocoder-autocomplete"></script>
+
+    <!-- Custom JS -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
